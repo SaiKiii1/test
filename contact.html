@@ -204,6 +204,48 @@
 		<script src="js/main.js"></script>
 
 		<!-- Custom JS for Form -->
+
+		<script>
+function initMap() {
+    var location = { lat: 40.6829, lng: -73.9754 };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: location
+    });
+
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Red Hawks"
+    });
+}
+</script>
+
+<script async 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFlXyE7KXzCyehtSzkoJkvDLSI54XhWYU&callback=initMap">
+</script>
+
+
+
+		<script>
+function initMap() {
+    var location = { lat: 40.6829, lng: -73.9754 }; // Brooklyn, NY
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: location
+    });
+
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Red Hawks"
+    });
+}
+</script>
+
+
 		<script>
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -222,16 +264,15 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         return;
     }
 
-    // EmailJS template parameters
+    // EmailJS template parameters (MUST MATCH TEMPLATE)
     const templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: subject,
+        title: subject,
+        name: name,
+        email: email,
         message: message,
-        to_email: "lancekean86@gmail.com"
+        time: new Date().toLocaleString()
     };
 
-    // Send email
     emailjs.send('service_4zr2j28', 'template_24qtf43', templateParams)
     .then(function(response) {
         formMessage.textContent = "✅ Thank you, " + name + "! Your message has been sent successfully.";
@@ -245,8 +286,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         console.error('EmailJS Error:', error);
     });
 });
-
 </script>
+
 
 
 	<script async 
