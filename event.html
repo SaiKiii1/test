@@ -1,0 +1,406 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="logo.png">
+		<!-- Author Meta -->
+        <meta name="author" content="codepixer">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Red Hawks</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		<link rel="stylesheet" href="css/linearicons.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<link rel="stylesheet" href="css/nice-select.css">					
+		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/main.css">
+
+        <!-- ✨ FLASHCARD CSS ADDED HERE -->
+        <style>
+            #eventCardOverlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(87,89,91,0.4);
+                backdrop-filter: blur(3px);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                transition: opacity 0.3s ease;
+            }
+
+            #eventCard {
+                width: 60%;
+                max-width: 700px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 15px;
+                padding: 30px;
+                backdrop-filter: blur(10px);
+                color: #fff;
+                box-shadow: 0 0 25px rgba(0,0,0,0.3);
+                opacity: 0;
+                transform: scale(0.8);
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            #closeCard {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                font-size: 28px;
+                background: none;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+
+            #eventCardOverlay.show {
+                display: flex;
+            }
+
+            #eventCard.show {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            @media(max-width: 768px){
+                #eventCard {
+                    width: 90%;
+                }
+            }
+        </style>
+        <!-- END FLASHCARD CSS -->
+
+	</head>
+	<body>
+
+	<header id="header" id="home">
+		<div class="container header-top">
+			<div class="row">
+				<div class="col-6 top-head-left"></div>
+				<div class="col-6 top-head-right">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+					</ul>
+				</div>			  			
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo"></div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-active"><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="event.html">Events</a></li>
+						<li><a href="ticket.html">Shop</a></li>
+						<li><a href="blog-home.html">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Upcoming Events		
+					</h1>	
+					<p class="text-white link-nav"><a href="index.html">Home </a>  
+					<span class="lnr lnr-arrow-right"></span>  
+					<a href="event.html"> Events</a></p>
+				</div>											
+			</div>
+		</div>
+	</section>
+
+	<section class="upcoming-event-area section-gap" id="events">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-10">
+					<div class="title text-center">
+						<h1 class="mb-10">Checkout our Upcoming Events</h1>
+						<p></p>
+					</div>
+				</div>
+			</div>
+
+			<div id="cart-overlay"></div>
+
+			
+			<div class="row">
+				<div class="col-lg-6 event-left">
+					<div class="single-events">
+						<img class="img-fluid" src="x1.jpg" alt="">
+						<a href="#"><h4>Oxidia Mobile Legends Release</h4></a>
+						<h6><span>12th January, 2025</span> at MLBB Headquarters</h6>
+						<p>
+							Experience the dawn of a new era with the official release of Oxidia Mobile Legends, featuring enhanced visuals, refined gameplay, and thrilling new modes that redefine the competitive arena for every player.
+						</p>
+						<a href="#" class="primary-btn text-uppercase">View Details</a>
+					</div>
+
+					<div class="single-events">
+						<img class="img-fluid" src="x2.jpg" alt="">
+						<a href="#"><h4>Lancelot – Swordmaster Skin Release</h4></a>
+						<h6><span>5th February, 2025</span> in the MLBB Store</h6>
+						<p>
+							Witness elegance in motion as Lancelot: Swordmaster graces the battlefield. This release showcases stunning blade animations, regal effects, and a refined aura that captures the true essence of mastery and grace.
+						</p>
+						<a href="#" class="primary-btn text-uppercase">View Details</a>
+					</div>							
+				</div>
+
+				<div class="col-lg-6 event-right">
+					<div class="single-events">
+						<a href="#"><h4>M-World Wanwan Skin Release</h4></a>
+						<h6><span>28th March, 2025</span> in the MLBB Store</h6>
+						<p>
+							Celebrate the world of champions with Wanwan’s M-World Skin, blending futuristic design, radiant energy, and high-speed animations that embody confidence, precision, and unstoppable agility.
+						</p>
+						<a href="#" class="primary-btn text-uppercase">View Details</a>
+						<img class="img-fluid" src="x3.jpg" alt="">
+					</div>
+
+					<div class="single-events">
+						<a href="#"><h4>Fanny & Claude – Valentine Skin Release</h4></a>
+						<h6><span> 14th February, 2025</span> in the MLBB Store</h6>
+						<p>
+							Feel the spark of love and teamwork with the Valentine Duo: Fanny and Claude. This limited-time release highlights a perfect balance of romance and action, featuring vibrant visuals and special effects that symbolize unity in every battle.
+						</p>
+						<a href="#" class="primary-btn text-uppercase">View Details</a>
+						<img class="img-fluid" src="x4.png" alt="">
+					</div>							
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer-area section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Copyright</h6>
+						<p>© 2025 Red Hawks. All rights reserved.</p>
+					</div>
+				</div>
+
+				<div class="col-lg-5 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Email us</h6>
+						<p>Stay updated to Red Hawks</p>
+						<div id="mc_embed_signup">
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+								<input class="form-control" name="EMAIL" placeholder="Enter Email" required type="email">
+								<button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
+								<div style="position: absolute; left: -5000px;">
+									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+								</div>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+					<div class="single-footer-widget">
+						<h6>Follow Us</h6>
+						<p>Let us be social</p>
+						<div class="footer-social d-flex align-items-center">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>							
+			</div>
+		</div>
+	</footer>
+
+	<!-- ✨ FLASHCARD HTML ADDED -->
+	<div id="eventCardOverlay">
+	    <div id="eventCard">
+	        <button id="closeCard">&times;</button>
+	        <h2 id="cardTitle"></h2>
+	        <p id="cardDate"></p>
+	        <p id="cardLocation"></p>
+	        <p id="cardDescription"></p>
+	    </div>
+	</div>
+	<!-- END FLASHCARD -->
+
+	<!-- JavaScript -->
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>			
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="js/easing.min.js"></script>			
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.min.js"></script>	
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>	
+	<script src="js/owl.carousel.min.js"></script>	
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/justified.min.js"></script>					
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>			
+	<script src="js/parallax.min.js"></script>		
+	<script src="js/mail-script.js"></script>	
+	<script src="js/main.js"></script>
+
+	<!-- ✨ FLASHCARD JAVASCRIPT ADDED HERE -->
+	<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // -------------------------------
+    // EVENT CARD MODAL (existing code)
+    // -------------------------------
+    const overlayCard = document.getElementById("eventCardOverlay");
+    const card = document.getElementById("eventCard");
+    const cardTitle = document.getElementById("cardTitle");
+    const cardDate = document.getElementById("cardDate");
+    const cardLocation = document.getElementById("cardLocation");
+    const cardDescription = document.getElementById("cardDescription");
+
+    document.querySelectorAll(".single-events").forEach((eventBlock) => {
+        eventBlock.querySelector(".primary-btn").addEventListener("click", function(e){
+            e.preventDefault();
+            let title = eventBlock.querySelector("h4").innerText;
+            let date = eventBlock.querySelector("h6 span").innerText;
+            let location = eventBlock.querySelector("h6").innerText.replace(date, "").trim();
+            let desc = eventBlock.querySelector("p").innerText;
+
+            cardTitle.innerText = title;
+            cardDate.innerHTML = "<b>Date:</b> " + date;
+            cardLocation.innerHTML = "<b>Location:</b> " + location;
+            cardDescription.innerHTML = "<b>About:</b> " + desc;
+
+            overlayCard.classList.add("show");
+            setTimeout(() => card.classList.add("show"), 10);
+        });
+    });
+
+    document.getElementById("closeCard").addEventListener("click", () => {
+        card.classList.remove("show");
+        setTimeout(() => overlayCard.classList.remove("show"), 250);
+    });
+
+    // -------------------------------
+    // SHOPPING CART MODAL + OVERLAY
+    // -------------------------------
+    const cart = [];
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const cartCount = document.getElementById("cart-count");
+    const cartSidebar = document.getElementById("cart-sidebar");
+    const navCartBtn = document.getElementById("nav-cart-btn");
+
+    // Add overlay element for cart
+    let cartOverlay = document.createElement("div");
+    cartOverlay.id = "cart-overlay";
+    document.body.appendChild(cartOverlay);
+
+    function updateCart() {
+        cartItems.innerHTML = "";
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price;
+            const li = document.createElement("li");
+            li.textContent = `${item.name} - ₱${item.price.toFixed(2)}`;
+
+            const removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.onclick = () => {
+                cart.splice(index, 1);
+                updateCart();
+            };
+            li.appendChild(removeBtn);
+            cartItems.appendChild(li);
+        });
+        cartTotal.textContent = `Total: ₱${total.toFixed(2)}`;
+        cartCount.textContent = cart.length;
+    }
+
+    const orderButtons = document.querySelectorAll(".order-btn");
+    orderButtons.forEach(button => {
+        button.addEventListener("click", e => {
+            e.preventDefault();
+            const displayedName = button.closest(".single-exhibition").querySelector("h4").textContent.trim();
+            let price;
+
+            switch(displayedName) {
+                case "Red Hawks E-sport Jersey": price = 1500; break;
+                case "Red Hawks Graphic Shirt": price = 950; break;
+                case "Red Hawks Classic Shirt (White)": price = 850; break;
+                case "Red Hawks Mouse Pad": price = 750; break;
+                case "Red Hawks Gaming Mouse": price = 1200; break;
+                case "Red Hawks Tumbler": price = 900; break;
+                default: price = parseFloat(button.dataset.price);
+            }
+
+            cart.push({ name: displayedName, price });
+            updateCart();
+
+            cartSidebar.classList.add("open");
+            cartOverlay.classList.add("active");
+        });
+    });
+
+    // Toggle cart sidebar
+    navCartBtn.addEventListener("click", e => {
+        e.preventDefault();
+        const isOpen = cartSidebar.classList.toggle("open");
+        cartOverlay.classList.toggle("active", isOpen);
+    });
+
+    // Checkout button
+    document.getElementById("checkout-btn").addEventListener("click", () => {
+        if(cart.length === 0){
+            alert("Your cart is empty!");
+            return;
+        }
+        alert(`Thank you for your order! Total: ₱${cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)}`);
+        cart.length = 0;
+        updateCart();
+        cartSidebar.classList.remove("open");
+        cartOverlay.classList.remove("active");
+    });
+
+    // Close cart when clicking on overlay
+    cartOverlay.addEventListener("click", () => {
+        cartSidebar.classList.remove("open");
+        cartOverlay.classList.remove("active");
+    });
+});
+</script>
+
+	<!-- END FLASHCARD SCRIPT -->
+
+	
+
+	</body>
+	</html>
